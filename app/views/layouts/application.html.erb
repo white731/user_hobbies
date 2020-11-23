@@ -10,9 +10,12 @@
   </head>
 
   <body>
-
+    <div class = "container">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    
+    <%= button_to "Log out", destroy_user_session_path, method: :delete %>
     <%= yield %>
+    </div>
   </body>
 </html>
