@@ -1,6 +1,14 @@
 <h1>Hobbies</h1>
 
-<%@hobbies.each do |hobby|%>
-<%=hobby.name%>
-<%end%>
+
+<%= link_to "Add a hobby", new_hobby_path %>
+<h4>Here are your hobbies!</h4>
+<ul>
+  <% @hobbies.each do |hobby| %>
+    <li>
+      <%= hobby.name %> -- <%= hobby.body %>
+      <hr/>
+    </li>
+  <% end %>
+</ul>
 
