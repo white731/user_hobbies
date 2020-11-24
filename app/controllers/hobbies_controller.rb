@@ -3,13 +3,15 @@ class HobbiesController < ApplicationController
   before_action :set_hobby, only: [:show, :edit, :update]
 
   def index
-    @hobbies = Hobby.all
+    @hobbies = current_user.hobbies.all
   end
 
   def show
+    @hobby = current_user.hobbies.find(params[:id])
   end
 
   def edit
+    @hobby = current_user.hobbies.find(params[:id])
   end
 
   def update
@@ -38,6 +40,7 @@ class HobbiesController < ApplicationController
   end
 
   def destroy
+    @hobby = current_user.hobbies.find(params[:id])
     @hobby.destroy
     redirect_to hobbies_path
   end

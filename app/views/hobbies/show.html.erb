@@ -1,2 +1,7 @@
-<h1>Hobbies#show</h1>
-<p>Find me in app/views/hobbies/show.html.erb</p>
+<h1><%= @hobby.name %></h1>
+<h3><%= @hobby.body %></h3>
+<%= link_to "Edit hobby", edit_hobby_path %>
+<br/>
+<%= link_to "Delete hobby", hobby_path(@hobby), method: :delete %>
+<br/>
+<h5><%= link_to "Go back to hobbies", hobbies_path %></h5>
